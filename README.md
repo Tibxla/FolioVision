@@ -55,8 +55,8 @@ Vérifiez également que les services **Apache** et **MySQL** sont actifs dans X
 
 #### Configuration du serveur web
 
-1. Placez le dossier du projet (`FolioVision V2`) dans le répertoire `htdocs` de XAMPP. Exemple :
-   - Si XAMPP est installé dans `C:\xampp`, déplacez le dossier vers `C:\xampp\htdocs\FolioVision V2`.
+1. Placez le dossier du projet (`FolioVision`) dans le répertoire `htdocs` de XAMPP. Exemple :
+   - Si XAMPP est installé dans `C:\xampp`, déplacez le dossier vers `C:\xampp\htdocs\FolioVision`.
 2. Assurez-vous que le fichier `.htaccess` est présent à la racine du projet pour gérer les réécritures d’URL.
 
 #### Accès au projet
