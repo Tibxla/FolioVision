@@ -1,0 +1,127 @@
+﻿Structure du dossier pour le volume SSD FAC
+Le numÚro de sÚrie du volume est 4630-1FCC
+S:.
+ª   .htaccess
+ª   arborescence.txt
+ª   database.sql
+ª   index.php
+ª   Readme.txt
+ª   
++---assets
+ª   +---css
+ª   ª       style.css
+ª   ª       stylenomin.css
+ª   ª       
+ª   +---img
+ª   ª       android-icon-144x144.png
+ª   ª       android-icon-192x192.png
+ª   ª       android-icon-36x36.png
+ª   ª       android-icon-48x48.png
+ª   ª       android-icon-72x72.png
+ª   ª       android-icon-96x96.png
+ª   ª       apple-icon-114x114.png
+ª   ª       apple-icon-120x120.png
+ª   ª       apple-icon-144x144.png
+ª   ª       apple-icon-152x152.png
+ª   ª       apple-icon-180x180.png
+ª   ª       apple-icon-57x57.png
+ª   ª       apple-icon-60x60.png
+ª   ª       apple-icon-72x72.png
+ª   ª       apple-icon-76x76.png
+ª   ª       apple-icon-precomposed.png
+ª   ª       apple-icon.png
+ª   ª       browserconfig.xml
+ª   ª       favicon-16x16.png
+ª   ª       favicon-32x32.png
+ª   ª       favicon-96x96.png
+ª   ª       favicon.ico
+ª   ª       manifest.json
+ª   ª       ms-icon-144x144.png
+ª   ª       ms-icon-150x150.png
+ª   ª       ms-icon-310x310.png
+ª   ª       ms-icon-70x70.png
+ª   ª       
+ª   +---js
+ª           script.js
+ª           
++---config
+ª       config.php
+ª       database.php
+ª       
++---includes
+ª       footer.php
+ª       header.php
+ª       header_minimal.php
+ª       
++---pages
+    +---api
+    ª       add_account.php
+    ª       add_budget.php
+    ª       add_category.php
+    ª       add_goal.php
+    ª       add_investment.php
+    ª       add_transaction.php
+    ª       copy_transaction.php
+    ª       delete_account.php
+    ª       delete_budget.php
+    ª       delete_goal.php
+    ª       delete_investment.php
+    ª       delete_transaction.php
+    ª       duplicate_transaction.php
+    ª       get_account.php
+    ª       get_accounts.php
+    ª       get_account_balance.php
+    ª       get_budget.php
+    ª       get_budgets.php
+    ª       get_budget_accounts.php
+    ª       get_categories.php
+    ª       get_goal.php
+    ª       get_goals.php
+    ª       get_investment.php
+    ª       get_investments.php
+    ª       get_main_categories.php
+    ª       get_subcategories.php
+    ª       get_transaction.php
+    ª       get_transactions.php
+    ª       move_transaction.php
+    ª       submit_contact.php
+    ª       update_account.php
+    ª       update_budget.php
+    ª       update_goal.php
+    ª       update_goal_status.php
+    ª       update_investment.php
+    ª       update_password.php
+    ª       update_profile.php
+    ª       update_transaction.php
+    ª       
+    +---auth
+    ª       login.php
+    ª       logout.php
+    ª       register.php
+    ª       
+    +---error
+    ª       404.php
+    ª       500.php
+    ª       
+    +---public
+    ª   ª   about.php
+    ª   ª   bonus.php
+    ª   ª   contact.php
+    ª   ª   privacy.php
+    ª   ª   terms.php
+    ª   ª   
+    ª   +---features
+    ª           budget.php
+    ª           goals.php
+    ª           investments.php
+    ª           
+    +---user
+            accounts.php
+            account_details.php
+            budget.php
+            dashboard.php
+            goals.php
+            investments.php
+            profile.php
+            settings.php
+            

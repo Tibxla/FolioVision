@@ -1,0 +1,2699 @@
+/* Définitions des variables globales pour les couleurs et styles réutilisables */
+:root {
+    --background-color: #121212; /* Couleur de fond principale (gris sombre) */
+    --container-background: #1a1a1a; /* Fond des conteneurs principaux */
+    --secondary-container-background: #242424; /* Fond secondaire pour les éléments imbriqués */
+    --accent-color: #00bcd4; /* Couleur d'accentuation principale (cyan) */
+    --text-color: #e0e0e0; /* Couleur du texte par défaut (gris clair) */
+    --light-text-color: #fff; /* Couleur du texte clair (blanc) */
+    --error-color: #ff4d4d; /* Couleur pour les messages d'erreur (rouge) */
+    --success-color: #4dff4d; /* Couleur pour les messages de succès (vert) */
+}
+
+/* Styles de base pour le corps de la page */
+body {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    font-family: 'Roboto', sans-serif; /* Police par défaut : Roboto */
+    background-color: var(--background-color); /* Applique la couleur de fond sombre */
+    color: var(--text-color); /* Couleur du texte par défaut */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les paddings par défaut */
+}
+
+/* Styles pour l'en-tête */
+header {
+    background-color: var(--container-background); /* Fond sombre pour l'en-tête */
+    padding: 20px; /* Espacement interne */
+    display: flex; /* Utilise Flexbox pour l'alignement */
+    justify-content: space-between; /* Espacement maximal entre les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Ombre portée sous l'en-tête */
+}
+
+/* Styles pour le logo */
+.logo {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste pour le logo */
+    font-size: 1.5em; /* Taille de la police */
+    color: var(--accent-color); /* Couleur cyan pour le logo */
+    text-decoration: none; /* Supprime le soulignement */
+    margin-right: 20px; /* Marge à droite pour espacement */
+}
+
+/* Styles pour la liste de navigation */
+nav ul {
+    list-style: none; /* Supprime les puces de la liste */
+    display: flex; /* Affiche les éléments en ligne avec Flexbox */
+    gap: 20px; /* Espacement entre les éléments */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les paddings par défaut */
+}
+
+/* Styles pour les liens dans la navigation */
+nav ul li a {
+    color: var(--text-color); /* Couleur du texte (gris clair) */
+    text-decoration: none; /* Pas de soulignement */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    font-weight: 400; /* Poids normal de la police */
+}
+
+/* Effet au survol des liens de navigation */
+nav ul li a:hover {
+    color: var(--accent-color); /* Couleur cyan au survol */
+}
+
+/* Styles pour les actions utilisateur */
+.user-actions {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    gap: 10px; /* Espacement entre les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+/* Styles pour le texte des actions utilisateur */
+.user-actions span {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Couleur du texte (gris clair) */
+}
+
+/* Styles généraux pour les boutons */
+.btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+    cursor: pointer; /* Curseur en main */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+}
+
+/* Effet au survol des boutons */
+.btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+    background-color: transparent; /* Fond transparent */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    color: var(--accent-color); /* Texte cyan */
+    padding: 8px 15px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    transition: background-color 0.3s, color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton secondaire */
+.btn-secondary:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Styles pour le bouton de menu mobile */
+.menu-toggle {
+    display: none; /* Caché par défaut (visible sur mobile) */
+    font-size: 1.5em; /* Taille de la police */
+    color: var(--text-color); /* Couleur gris clair */
+    cursor: pointer; /* Curseur en main */
+}
+
+/* Styles pour la section héroïque */
+.hero {
+    background: linear-gradient(135deg, var(--container-background), #2a2a2a); /* Dégradé de fond */
+    padding: 100px 20px; /* Espacement interne généreux */
+    text-align: center; /* Texte centré */
+}
+
+/* Titre principal de la section héroïque */
+.hero h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 3em; /* Grande taille */
+    margin-bottom: 20px; /* Marge inférieure */
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Paragraphe de la section héroïque */
+.hero p {
+    font-size: 1.2em; /* Taille légèrement augmentée */
+    margin-bottom: 40px; /* Marge inférieure */
+}
+
+/* Styles pour la section des fonctionnalités */
+.features {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: space-around; /* Espacement équitable */
+    flex-wrap: wrap; /* Passage à la ligne si nécessaire */
+    padding: 50px 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+}
+
+/* Styles pour chaque élément de fonctionnalité */
+.feature {
+    width: 30%; /* Largeur relative */
+    min-width: 250px; /* Largeur minimale */
+    margin: 20px; /* Marge externe */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    transition: transform 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Effet au survol des éléments de fonctionnalité */
+.feature:hover {
+    transform: translateY(-10px); /* Déplacement vers le haut */
+}
+
+/* Titre des éléments de fonctionnalité */
+.feature h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Paragraphe des éléments de fonctionnalité */
+.feature p {
+    font-size: 1em; /* Taille standard */
+}
+
+/* Styles pour la section des statistiques */
+.stats {
+    text-align: center; /* Texte centré */
+    padding: 50px 20px; /* Espacement interne */
+    background-color: var(--background-color); /* Fond sombre principal */
+}
+
+/* Titre de la section des statistiques */
+.stats h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 30px; /* Marge inférieure */
+}
+
+/* Conteneur pour chaque statistique */
+.stat {
+    display: inline-block; /* Affichage en ligne */
+    margin: 0 20px; /* Marges latérales */
+}
+
+/* Titre des statistiques */
+.stat h3 {
+    font-size: 2em; /* Grande taille */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Paragraphe des statistiques */
+.stat p {
+    font-size: 1em; /* Taille standard */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Styles pour la section d'appel à l'action */
+.cta {
+    text-align: center; /* Texte centré */
+    padding: 50px 20px; /* Espacement interne */
+    background: linear-gradient(135deg, var(--accent-color), #0097a7); /* Dégradé cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Titre de la section d'appel à l'action */
+.cta h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Bouton dans la section d'appel à l'action */
+.cta .btn {
+    background-color: var(--light-text-color); /* Fond blanc */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+}
+
+/* Effet au survol du bouton dans la section d'appel à l'action */
+.cta .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid var(--light-text-color); /* Bordure blanche */
+}
+
+/* Styles pour le pied de page */
+footer {
+    background-color: var(--container-background); /* Fond sombre */
+    padding: 20px; /* Espacement interne */
+    text-align: center; /* Texte centré */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    font-size: 0.9em; /* Taille légèrement réduite */
+}
+
+/* Styles pour les liens dans le pied de page */
+.footer-links a {
+    color: var(--accent-color); /* Couleur cyan */
+    text-decoration: none; /* Pas de soulignement */
+    margin: 0 5px; /* Marges latérales */
+}
+
+/* Effet au survol des liens du pied de page */
+.footer-links a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Slogan dans le pied de page */
+.footer-slogan {
+    margin: 10px 0; /* Marges verticale */
+    font-style: italic; /* Style italique */
+    color: #b0b0b0; /* Gris moyen */
+}
+
+/* Copyright dans le pied de page */
+.footer-copyright {
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Styles pour la page privacy.php */
+.privacy-container {
+    max-width: 800px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal de la page privacy */
+.privacy-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Sous-titre de la page privacy */
+.privacy-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.8em; /* Taille moyenne */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-top: 30px; /* Marge supérieure */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Paragraphe de la page privacy */
+.privacy-container p {
+    line-height: 1.6; /* Hauteur de ligne pour lisibilité */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Liste dans la page privacy */
+.privacy-container ul {
+    list-style: disc inside; /* Puces à l'intérieur */
+    padding-left: 20px; /* Décalage à gauche */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Éléments de la liste dans la page privacy */
+.privacy-container li {
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Styles pour la page terms.php */
+.terms-container {
+    max-width: 800px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal de la page terms */
+.terms-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Sous-titre de la page terms */
+.terms-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.8em; /* Taille moyenne */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-top: 30px; /* Marge supérieure */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Paragraphe de la page terms */
+.terms-container p {
+    line-height: 1.6; /* Hauteur de ligne pour lisibilité */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Texte de mise à jour dans la page terms */
+.last-updated {
+    font-style: italic; /* Style italique */
+    margin-bottom: 30px; /* Marge inférieure */
+}
+
+/* Styles pour le conteneur du menu déroulant */
+.dropdown {
+    position: relative; /* Positionnement relatif pour le menu */
+}
+
+/* Affichage du menu déroulant au survol */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Affiche le menu */
+}
+
+/* Styles pour le menu déroulant */
+.dropdown-menu {
+    display: none; /* Caché par défaut */
+    position: absolute; /* Positionnement absolu */
+    background-color: var(--container-background); /* Fond sombre */
+    min-width: 200px; /* Largeur minimale */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Ombre portée */
+    z-index: 1; /* Superposition au-dessus des autres éléments */
+}
+
+/* Éléments de la liste dans le menu déroulant */
+.dropdown-menu li {
+    list-style: none; /* Pas de puces */
+}
+
+/* Liens dans le menu déroulant */
+.dropdown-menu li a {
+    color: var(--text-color); /* Texte gris clair */
+    padding: 10px 20px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Affichage en bloc */
+}
+
+/* Effet au survol des liens du menu déroulant */
+.dropdown-menu li a:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Styles pour les pages de fonctionnalités */
+.feature-container {
+    max-width: 800px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal des pages de fonctionnalités */
+.feature-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Paragraphe des pages de fonctionnalités */
+.feature-container p {
+    line-height: 1.6; /* Hauteur de ligne pour lisibilité */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Liste dans les pages de fonctionnalités */
+.feature-container ul {
+    list-style: disc inside; /* Puces à l'intérieur */
+    padding-left: 20px; /* Décalage à gauche */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Éléments de la liste dans les pages de fonctionnalités */
+.feature-container li {
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Styles pour les pages about.php et contact.php */
+.about-container, .contact-container {
+    max-width: 800px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal des pages about et contact */
+.about-container h1, .contact-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Sous-titre des pages about et contact */
+.about-container h2, .contact-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.8em; /* Taille moyenne */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-top: 30px; /* Marge supérieure */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Paragraphe des pages about et contact */
+.about-container p, .contact-container p {
+    line-height: 1.6; /* Hauteur de ligne pour lisibilité */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Liste dans la page about */
+.about-container ul {
+    list-style: disc inside; /* Puces à l'intérieur */
+    padding-left: 20px; /* Décalage à gauche */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Formulaire de la page contact */
+.contact-container form {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    gap: 15px; /* Espacement entre les éléments */
+}
+
+/* Étiquettes du formulaire de contact */
+.contact-container label {
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Champs de saisie et zone de texte dans le formulaire de contact */
+.contact-container input, .contact-container textarea {
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Bouton du formulaire de contact */
+.contact-container button {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de contact */
+.contact-container button:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Styles pour la boîte modale */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe */
+    z-index: 1; /* Superposition */
+    left: 0; /* Aligné à gauche */
+    top: 0; /* Aligné en haut */
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    overflow: auto; /* Défilement si nécessaire */
+    background-color: rgba(0,0,0,0.5); /* Fond semi-transparent */
+}
+
+/* Contenu de la boîte modale */
+.modal-content {
+    background-color: var(--container-background); /* Fond sombre */
+    color: var(--text-color); /* Texte clair */
+    margin: 15% auto; /* Centrage vertical et horizontal */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Ombre portée */
+    width: 50%; /* Largeur relative */
+    max-width: 500px; /* Largeur maximale par défaut */
+}
+
+/* Bouton de fermeture de la modale */
+.close {
+    color: var(--text-color); /* Texte gris clair */
+    float: right; /* Aligné à droite */
+    font-size: 28px; /* Grande taille */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en main */
+}
+
+/* Effet au survol du bouton de fermeture */
+.close:hover {
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Message dans la modale */
+#modal-message {
+    font-size: 18px; /* Taille de police */
+    color: var(--text-color); /* Texte clair */
+    text-align: center; /* Texte centré */
+}
+
+/* Styles pour les pages d'erreur */
+.error-container {
+    max-width: 600px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    text-align: center; /* Texte centré */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal des pages d'erreur */
+.error-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Paragraphe des pages d'erreur */
+.error-container p {
+    font-size: 1.2em; /* Taille légèrement augmentée */
+    margin-bottom: 30px; /* Marge inférieure */
+}
+
+/* Bouton des pages d'erreur */
+.error-container .btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+}
+
+/* Effet au survol du bouton des pages d'erreur */
+.error-container .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Styles pour les pages d'authentification */
+.auth-container {
+    display: flex; /* Utilise Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Pleine hauteur de la fenêtre */
+    background-color: var(--background-color); /* Fond sombre */
+}
+
+/* Boîte d'authentification */
+.auth-box {
+    background-color: var(--container-background); /* Fond sombre */
+    padding: 40px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    text-align: center; /* Texte centré */
+    width: 100%; /* Pleine largeur */
+    max-width: 400px; /* Largeur maximale */
+}
+
+/* Logo dans la boîte d'authentification */
+.auth-box .logo {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Affichage en bloc */
+    margin: 0 auto 20px auto; /* Centrage avec marge inférieure */
+}
+
+/* Titre principal dans la boîte d'authentification */
+.auth-box h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.8em; /* Taille moyenne */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Formulaire dans la boîte d'authentification */
+.auth-box form {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    gap: 15px; /* Espacement entre les éléments */
+}
+
+/* Étiquettes dans la boîte d'authentification */
+.auth-box label {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    text-align: left; /* Alignement à gauche */
+}
+
+/* Champs de saisie dans la boîte d'authentification */
+.auth-box input {
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Bouton dans la boîte d'authentification */
+.auth-box .btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton d'authentification */
+.auth-box .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Paragraphe dans la boîte d'authentification */
+.auth-box p {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    margin-top: 20px; /* Marge supérieure */
+}
+
+/* Liens dans la boîte d'authentification */
+.auth-box a {
+    color: var(--accent-color); /* Couleur cyan */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Effet au survol des liens d'authentification */
+.auth-box a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Message d'erreur */
+.error-message {
+    color: var(--error-color); /* Rouge */
+    font-size: 0.9em; /* Taille légèrement réduite */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Message de succès */
+.success-message {
+    color: var(--success-color); /* Vert */
+    font-size: 0.9em; /* Taille légèrement réduite */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Styles pour le conteneur du tableau de bord */
+.dashboard-container {
+    max-width: 1200px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--light-text-color); /* Texte blanc */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre du tableau de bord */
+.dashboard-title {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    text-align: center; /* Texte centré */
+    margin-bottom: 40px; /* Marge inférieure */
+}
+
+/* Section dans le tableau de bord */
+.dashboard-section {
+    margin-bottom: 40px; /* Marge inférieure */
+}
+
+/* Cartes de solde et de budget */
+.balance-card, .budget-card {
+    background-color: var(--container-background); /* Utilise la variable CSS pour le fond */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    text-align: center; /* Texte centré */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Montant du solde */
+.balance-amount {
+    font-size: 2em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Barre de progression */
+progress {
+    width: 100%; /* Pleine largeur */
+    height: 20px; /* Hauteur fixe */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+/* Tableau */
+table {
+    width: 100%; /* Pleine largeur */
+    border-collapse: collapse; /* Fusion des bordures */
+}
+
+/* Cellules du tableau */
+th, td {
+    padding: 10px; /* Espacement interne */
+    text-align: left; /* Alignement à gauche */
+    border-bottom: 1px solid var(--light-text-color); /* Bordure inférieure blanche */
+}
+
+/* Logo dans l'en-tête minimaliste */
+.minimal-header .logo {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.5em; /* Taille de police */
+    color: var(--accent-color); /* Couleur cyan */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Conteneur principal du tableau de bord */
+.dashboard-wrapper {
+    display: flex; /* Utilise Flexbox */
+}
+
+/* Contenu principal du tableau de bord */
+.dashboard-content {
+    margin-left: 0; /* Pas de marge à gauche par défaut */
+    transition: margin-left 0.3s ease; /* Transition fluide */
+    width: 100%; /* Pleine largeur */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Styles pour la page de profil */
+.profile-container {
+    max-width: 600px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal de la page de profil */
+.profile-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Formulaire de la page de profil */
+.profile-container form {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    gap: 15px; /* Espacement entre les éléments */
+}
+
+/* Étiquettes dans le formulaire de profil */
+.profile-container label {
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Champs de saisie dans le formulaire de profil */
+.profile-container input {
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Bouton dans le formulaire de profil */
+.profile-container button.btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de profil */
+.profile-container button.btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Message d'erreur dans la page de profil */
+.error-message {
+    color: var(--error-color); /* Rouge */
+    font-size: 14px; /* Taille fixe en pixels */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Message de succès dans la page de profil */
+.success-message {
+    color: var(--success-color); /* Vert */
+    font-size: 14px; /* Taille fixe en pixels */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Lien du nom d'utilisateur */
+.username-link {
+    color: var(--light-text-color); /* Texte blanc */
+    text-decoration: none; /* Pas de soulignement */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    margin-right: 15px; /* Marge à droite */
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+    background-color: transparent; /* Fond transparent */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    color: var(--accent-color); /* Texte cyan */
+    padding: 8px 15px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    transition: background-color 0.3s, color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton secondaire */
+.btn-secondary:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Effet au survol du lien du nom d'utilisateur */
+.username-link:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Styles pour la barre latérale */
+.sidebar {
+    position: fixed; /* Position fixe */
+    top: 65px; /* Décalage depuis le haut */
+    left: -3000px; /* Caché à gauche par défaut */
+    width: 250px; /* Largeur fixe */
+    height: calc(100% - 65px); /* Hauteur ajustée */
+    background-color: var(--container-background); /* Fond sombre */
+    transition: left 0.3s ease; /* Transition fluide */
+    z-index: 1000; /* Superposition élevée */
+}
+
+/* Barre latérale visible */
+.sidebar.show {
+    left: 0; /* Aligné à gauche */
+}
+
+/* Liste de navigation dans la barre latérale */
+.sidebar nav ul {
+    list-style: none; /* Pas de puces */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Éléments de la liste dans la barre latérale */
+.sidebar nav ul li {
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Liens dans la barre latérale */
+.sidebar nav ul li a {
+    color: var(--text-color); /* Texte gris clair */
+    text-decoration: none; /* Pas de soulignement */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Effet au survol des liens de la barre latérale */
+.sidebar nav ul li a:hover {
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Styles pour l'en-tête minimaliste */
+.minimal-header {
+    background-color: var(--container-background); /* Fond sombre */
+    padding: 5px 20px; /* Espacement interne */
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espacement maximal */
+    align-items: center; /* Centre verticalement */
+    height: 50px; /* Hauteur fixe */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Ombre portée */
+    z-index: 1000; /* Superposition élevée */
+}
+
+/* Section gauche de l'en-tête minimaliste */
+.header-left {
+    display: flex; /* Utilise Flexbox */
+    align-items: center; /* Centre verticalement */
+}
+
+/* Bouton de bascule de la barre latérale */
+.sidebar-toggle {
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    color: var(--text-color); /* Texte gris clair */
+    font-size: 1.5em; /* Taille de police */
+    cursor: pointer; /* Curseur en main */
+    margin-right: 15px; /* Marge à droite */
+}
+
+/* Nom d'utilisateur dans les informations utilisateur */
+.user-info .username {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    font-size: 1em; /* Taille standard */
+}
+
+/* Styles pour le nom d'utilisateur du menu déroulant */
+.username {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    cursor: pointer; /* Curseur en main */
+}
+
+/* Contenu du menu déroulant */
+.dropdown-content {
+    display: none; /* Caché par défaut */
+    position: absolute; /* Positionnement absolu */
+    right: 0; /* Aligné à droite */
+    background-color: var(--container-background); /* Fond sombre */
+    min-width: 160px; /* Largeur minimale */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre portée */
+    z-index: 1; /* Superposition */
+}
+
+/* Liens dans le contenu du menu déroulant */
+.dropdown-content a {
+    color: var(--text-color); /* Texte gris clair */
+    padding: 12px 16px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Affichage en bloc */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Effet au survol des liens du menu déroulant */
+.dropdown-content a:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Affichage du menu déroulant quand actif */
+.user-dropdown.active .dropdown-content {
+    display: block; /* Affiche le menu */
+}
+
+/* Contenu du menu déroulant avec transitions */
+.dropdown-content {
+    display: none; /* Caché par défaut */
+    position: absolute; /* Positionnement absolu */
+    right: 0; /* Aligné à droite */
+    background-color: var(--container-background); /* Fond sombre */
+    min-width: 160px; /* Largeur minimale */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre portée */
+    z-index: 1; /* Superposition */
+    opacity: 0; /* Opacité initiale */
+    transform: translateY(-10px); /* Décalage initial */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transitions fluides */
+}
+
+/* Affichage et animation du menu déroulant au survol */
+.user-dropdown:hover .dropdown-content {
+    display: block; /* Affiche le menu */
+    opacity: 1; /* Pleine opacité */
+    transform: translateY(0); /* Remise à la position normale */
+}
+
+/* Conteneur du menu déroulant */
+.user-dropdown {
+    position: relative; /* Positionnement relatif */
+    display: inline-block; /* Affichage en ligne */
+}
+
+/* Nom d'utilisateur avec flèche */
+.username {
+    cursor: pointer; /* Curseur en main */
+    color: var(--text-color); /* Texte gris clair */
+    display: flex; /* Utilise Flexbox */
+    align-items: center; /* Centre verticalement */
+}
+
+/* Flèche du menu déroulant */
+.arrow {
+    margin-left: 5px; /* Marge à gauche */
+    font-size: 0.8em; /* Taille réduite */
+}
+
+/* Liste dans la barre latérale */
+.sidebar ul {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
+    display: block !important; /* Forcé en bloc */
+}
+
+/* Éléments de la liste dans la barre latérale */
+.sidebar li {
+    display: block; /* Affichage en bloc */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Liens dans la barre latérale */
+.sidebar a {
+    text-decoration: none; /* Pas de soulignement */
+    color: #333; /* Gris foncé */
+}
+
+/* Styles pour la page preferences.php */
+.preferences-container {
+    max-width: 600px; /* Largeur maximale */
+    margin: 50px auto; /* Centrage avec marges verticales */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre principal de la page preferences */
+.preferences-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Sous-titre de la page preferences */
+.preferences-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.8em; /* Taille moyenne */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-top: 30px; /* Marge supérieure */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Liste dans la page preferences */
+.preferences-container ul {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+}
+
+/* Éléments de la liste dans la page preferences */
+.preferences-container ul li {
+    margin-bottom: 10px; /* Marge inférieure */
+    display: flex; /* Utilise Flexbox */
+    align-items: center; /* Centre verticalement */
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+/* Formulaire dans la page preferences */
+.preferences-container form {
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    gap: 15px; /* Espacement entre les éléments */
+}
+
+/* Étiquettes dans le formulaire de preferences */
+.preferences-container label {
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Champs de saisie et listes déroulantes dans preferences */
+.preferences-container input, .preferences-container select {
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Bouton dans le formulaire de preferences */
+.preferences-container button.btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de preferences */
+.preferences-container button.btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Lien styled comme bouton dans preferences */
+.preferences-container a.btn {
+    padding: 5px 10px; /* Espacement interne réduit */
+    text-decoration: none; /* Pas de soulignement */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+}
+
+/* Effet au survol du lien bouton dans preferences */
+.preferences-container a.btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Lien styled comme bouton secondaire dans preferences */
+.preferences-container a.btn-secondary {
+    padding: 5px 10px; /* Espacement interne réduit */
+    background-color: transparent; /* Fond transparent */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    color: var(--accent-color); /* Texte cyan */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s, color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du lien bouton secondaire dans preferences */
+.preferences-container a.btn-secondary:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Masquer l'input de type color par défaut */
+.color-picker {
+    opacity: 0; /* Invisible */
+    position: absolute; /* Positionnement absolu */
+    z-index: -1; /* Derrière les autres éléments */
+}
+
+/* Style du bouton personnalisé pour le sélecteur de couleur */
+.color-picker-button {
+    display: inline-block; /* Affichage en ligne */
+    padding: 10px 20px; /* Espacement interne */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    font-size: 1em; /* Taille standard */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de couleur */
+.color-picker-button:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Style de la prévisualisation de couleur */
+#color-preview {
+    width: 150px; /* Largeur fixe */
+    height: 40px; /* Hauteur fixe */
+    border: 2px solid #333; /* Bordure grise foncée */
+    margin-top: 0px; /* Pas de marge supérieure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    transition: background-color 0.5s ease, box-shadow 0.3s ease; /* Transitions fluides */
+}
+
+/* Conteneur pour la sélection de couleur */
+.color-selection {
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espacement maximal */
+    align-items: center; /* Centre verticalement */
+    gap: 15px; /* Espacement entre les éléments */
+    margin-top: 10px; /* Marge supérieure */
+}
+
+/* Conteneur principal des comptes */
+.accounts-container {
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    margin: 20px; /* Marge externe */
+}
+
+/* Titre principal des comptes */
+.accounts-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+    text-align: center; /* Texte centré */
+}
+
+/* Sous-titre des comptes */
+.accounts-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 1.8em; /* Taille moyenne */
+    color: var(--accent-color); /* Couleur cyan */
+    margin: 30px 0 15px; /* Marges verticale */
+}
+
+/* Liste des comptes */
+.account-list {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+}
+
+/* Éléments de la liste des comptes */
+.account-list li {
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 15px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espacement maximal */
+    align-items: center; /* Centre verticalement */
+    transition: transform 0.3s; /* Transition pour effet */
+}
+
+/* Conteneur des boutons dans la liste des comptes */
+.account-list li div {
+    display: flex; /* Utilise Flexbox */
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+/* Étiquettes dans le formulaire d'ajout de compte */
+#add-account-form label {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    margin-bottom: 5px; /* Marge inférieure */
+    display: block; /* Affichage en bloc */
+}
+
+/* Bouton de soumission dans le formulaire d'ajout */
+#add-account-form .btn[type="submit"] {
+    margin-bottom: 10px; /* Marge inférieure */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de soumission d'ajout */
+#add-account-form .btn[type="submit"]:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Bouton de soumission dans le formulaire de modification */
+#edit-account-form .btn[type="submit"] {
+    margin-bottom: 10px; /* Marge inférieure */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de soumission de modification */
+#edit-account-form .btn[type="submit"]:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Champs de saisie et listes déroulantes dans le formulaire d'ajout */
+#add-account-form input, #add-account-form select {
+    width: 100%; /* Pleine largeur */
+    padding: 10px; /* Espacement interne */
+    margin-bottom: 15px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Titre des formulaires */
+.form-title {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Groupe de champs dans les formulaires */
+.form-group {
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Étiquettes dans les groupes de champs */
+.form-group label {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    display: block; /* Affichage en bloc */
+    margin-bottom: 5px; /* Marge inférieure */
+}
+
+/* Champs de saisie et listes déroulantes dans les groupes */
+.form-group input, .form-group select {
+    width: 100%; /* Pleine largeur */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Conteneur des formulaires de compte */
+.account-form-container {
+    background-color: var(--container-background); /* Fond sombre */
+    padding: 40px; /* Espacement interne généreux */
+    margin: 30px auto; /* Centrage avec marges verticales */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
+    max-width: 600px; /* Largeur maximale */
+    width: 100%; /* Pleine largeur adaptable */
+}
+
+/* Titre des formulaires de compte */
+.account-form-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    font-size: 1.8em; /* Taille moyenne */
+    margin-bottom: 20px; /* Marge inférieure */
+    text-align: center; /* Texte centré */
+}
+
+/* Étiquettes dans les formulaires de compte */
+.account-form-container label {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    color: var(--text-color); /* Texte gris clair */
+    margin-bottom: 5px; /* Marge inférieure */
+    display: block; /* Affichage en bloc */
+}
+
+/* Champs de saisie et listes déroulantes dans les formulaires de compte */
+.account-form-container input, .account-form-container select {
+    width: 100%; /* Pleine largeur */
+    padding: 12px; /* Espacement interne */
+    margin-bottom: 20px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Bouton dans les formulaires de compte */
+.account-form-container .btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 12px 20px; /* Espacement interne */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    width: 100%; /* Pleine largeur */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton dans les formulaires de compte */
+.account-form-container .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Conteneur des détails de compte */
+.account-details-container {
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    margin: 20px; /* Marge externe */
+}
+
+/* Titre principal des détails de compte */
+.account-details-container h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    font-size: 2.5em; /* Grande taille */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 20px; /* Marge inférieure */
+    text-align: center; /* Texte centré */
+}
+
+/* Paragraphe des détails de compte */
+.account-details-container p {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    font-size: 1.2em; /* Taille légèrement augmentée */
+    margin-bottom: 15px; /* Marge inférieure */
+}
+
+/* Bouton dans les détails de compte */
+.account-details-container .btn {
+    display: block; /* Affichage en bloc */
+    margin: 20px auto; /* Centrage avec marge verticale */
+    text-align: center; /* Texte centré */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+}
+
+/* Effet au survol du bouton des détails de compte */
+.account-details-container .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Liens dans la liste des comptes */
+.account-list a {
+    color: var(--text-color); /* Texte gris clair */
+    text-decoration: none; /* Pas de soulignement */
+    transition: color 0.3s ease; /* Transition fluide */
+}
+
+/* Effet au survol des liens de la liste des comptes */
+.account-list a:hover {
+    color: var(--accent-color); /* Couleur cyan */
+    text-decoration: underline; /* Soulignement */
+}
+
+/* Conteneur des détails de compte avec barre latérale */
+.account-details-wrapper {
+    display: flex; /* Utilise Flexbox */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+/* Barre latérale de la liste des comptes */
+.account-list-sidebar {
+    width: 200px; /* Largeur fixe */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 15px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+}
+
+/* Titre de la barre latérale des comptes */
+.account-list-sidebar h3 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Liste dans la barre latérale des comptes */
+.account-list-sidebar ul {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+}
+
+/* Éléments de la liste dans la barre latérale */
+.account-list-sidebar li {
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Liens dans la barre latérale des comptes */
+.account-list-sidebar a {
+    color: var(--text-color); /* Texte gris clair */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Effet au survol des liens de la barre latérale */
+.account-list-sidebar a:hover {
+    color: var(--accent-color); /* Couleur cyan */
+    text-decoration: underline; /* Soulignement */
+}
+
+/* Liste des transactions */
+#transaction-list {
+    margin-top: 20px; /* Marge supérieure */
+}
+
+/* Élément de transaction */
+.transaction-item {
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 10px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+}
+
+/* Informations du compte dans les transactions */
+.account-info {
+    font-size: 0.9em; /* Taille réduite */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Formulaire d'ajout de transaction */
+#add-transaction-form {
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Étiquettes dans le formulaire de transaction */
+#add-transaction-form label {
+    display: block; /* Affichage en bloc */
+    margin-bottom: 5px; /* Marge inférieure */
+}
+
+/* Champs de saisie et listes déroulantes dans le formulaire de transaction */
+#add-transaction-form input, #add-transaction-form select {
+    width: 100%; /* Pleine largeur */
+    padding: 8px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Modale pour les transactions */
+#transaction-modal {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe */
+    z-index: 1000; /* Superposition élevée */
+    left: 0; /* Aligné à gauche */
+    top: 0; /* Aligné en haut */
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    overflow: auto; /* Défilement si nécessaire */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Contenu de la modale de transaction */
+#transaction-modal .modal-content {
+    background-color: var(--container-background); /* Fond sombre */
+    margin: 15% auto; /* Centrage vertical et horizontal */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    width: 90%; /* Largeur relative */
+    max-width: 500px; /* Largeur maximale */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Bouton de fermeture de la modale de transaction */
+#transaction-modal .close {
+    color: var(--text-color); /* Texte gris clair */
+    float: right; /* Aligné à droite */
+    font-size: 28px; /* Grande taille */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en main */
+}
+
+/* Effet au survol du bouton de fermeture de la modale */
+#transaction-modal .close:hover {
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Conteneur des détails de compte avec barre latérale */
+.account-details-wrapper {
+    width: 100%; /* Pleine largeur */
+    display: flex; /* Utilise Flexbox */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+/* Barre latérale avec largeur fixe */
+.account-list-sidebar {
+    flex: 0 0 200px; /* Largeur fixe de 200px */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 15px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+}
+
+/* Conteneur principal des détails de compte */
+.account-details-container {
+    flex: 1; /* Prend l'espace restant */
+    padding: 20px; /* Espacement interne */
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+}
+
+/* Nom du compte dans les détails */
+.account-name {
+    text-align: left; /* Aligné à gauche */
+    font-size: 2em; /* Grande taille */
+    margin-bottom: 20px; /* Marge inférieure */
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Conteneur des informations du compte */
+.account-info-wrapper {
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Informations du compte */
+.account-info {
+    font-size: 1em; /* Taille standard */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Conteneur du solde */
+.balance-wrapper {
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espacement maximal */
+    align-items: center; /* Centre verticalement */
+    font-size: 1.2em; /* Taille légèrement augmentée */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Montant du solde dans les détails */
+.balance-amount {
+    font-weight: bold; /* Texte en gras */
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Groupe de boutons dans les détails */
+.button-group {
+    display: flex; /* Utilise Flexbox */
+    gap: 10px; /* Espacement entre les boutons */
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Modale pour les catégories */
+#category-modal {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe */
+    z-index: 1001; /* Superposition plus élevée */
+    left: 0; /* Aligné à gauche */
+    top: 0; /* Aligné en haut */
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    overflow: auto; /* Défilement si nécessaire */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Contenu de la modale de catégorie */
+#category-modal .modal-content {
+    background-color: var(--container-background); /* Fond sombre */
+    margin: 15% auto; /* Centrage vertical et horizontal */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    width: 90%; /* Largeur relative */
+    max-width: 400px; /* Largeur maximale */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Bouton de fermeture de la modale de catégorie */
+#category-modal .close {
+    color: var(--text-color); /* Texte gris clair */
+    float: right; /* Aligné à droite */
+    font-size: 28px; /* Grande taille */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en main */
+}
+
+/* Effet au survol du bouton de fermeture de catégorie */
+#category-modal .close:hover {
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Étiquettes dans le formulaire de catégorie */
+#category-modal form label {
+    display: block; /* Affichage en bloc */
+    margin-bottom: 5px; /* Marge inférieure */
+}
+
+/* Champs de saisie dans le formulaire de catégorie */
+#category-modal form input {
+    width: 100%; /* Pleine largeur */
+    padding: 8px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Élément de transaction avec positionnement relatif */
+.transaction-item {
+    position: relative; /* Positionnement relatif */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 10px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+}
+
+/* Actions sur les transactions */
+.transaction-actions {
+    position: absolute; /* Positionnement absolu */
+    right: 10px; /* Décalage à droite */
+    top: 10px; /* Décalage depuis le haut */
+}
+
+/* Icône de paramètres */
+.settings-icon {
+    cursor: pointer; /* Curseur en main */
+    font-size: 1.2em; /* Taille légèrement augmentée */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Menu d'actions */
+.action-menu {
+    display: none; /* Caché par défaut */
+    position: absolute; /* Positionnement absolu */
+    right: 0; /* Aligné à droite */
+    top: 20px; /* Décalage depuis le haut */
+    background-color: var(--container-background); /* Fond sombre */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    z-index: 100; /* Superposition */
+}
+
+/* Affichage du menu d'actions au survol */
+.transaction-actions:hover .action-menu {
+    display: block; /* Affiche le menu */
+}
+
+/* Liens dans le menu d'actions */
+.action-menu a {
+    display: block; /* Affichage en bloc */
+    padding: 10px; /* Espacement interne */
+    color: var(--text-color); /* Texte gris clair */
+    text-decoration: none; /* Pas de soulignement */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Effet au survol des liens du menu d'actions */
+.action-menu a:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    text-decoration: none; /* Ajouté pour supprimer le soulignement au survol */
+}
+
+/* Modale pour modifier une transaction */
+#edit-transaction-modal {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Position fixe */
+    z-index: 1000; /* Superposition élevée */
+    left: 0; /* Aligné à gauche */
+    top: 0; /* Aligné en haut */
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Contenu de la modale de modification de transaction */
+#edit-transaction-modal .modal-content {
+    background-color: var(--container-background); /* Fond sombre */
+    margin: 15% auto; /* Centrage vertical et horizontal */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    width: 90%; /* Largeur relative */
+    max-width: 500px; /* Largeur maximale */
+    color: var(--text-color); /* Texte gris clair */
+}
+
+/* Élément de budget */
+.budget-item {
+    position: relative; /* Positionnement relatif pour les enfants absolus */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 15px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+}
+
+/* Conteneur du formulaire de budget */
+.budget-form-container {
+    background-color: var(--container-background); /* Fond sombre */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    margin-bottom: 20px; /* Marge inférieure */
+    max-width: 600px; /* Largeur maximale */
+    margin-left: auto; /* Centrage horizontal */
+    margin-right: auto; /* Centrage horizontal */
+}
+
+/* Titre du formulaire de budget */
+.budget-form-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    font-size: 1.8em; /* Taille moyenne */
+    margin-bottom: 15px; /* Marge inférieure */
+    text-align: center; /* Texte centré */
+}
+
+/* Étiquettes dans le formulaire de budget */
+.budget-form-container label {
+    display: block; /* Affichage en bloc */
+    margin-bottom: 5px; /* Marge inférieure */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Champs de saisie et listes déroulantes dans le formulaire de budget */
+.budget-form-container input, .budget-form-container select {
+    width: 100%; /* Pleine largeur */
+    padding: 10px; /* Espacement interne */
+    margin-bottom: 15px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure grise */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Bouton dans le formulaire de budget */
+.budget-form-container button.btn {
+    width: 100%; /* Pleine largeur */
+    padding: 12px; /* Espacement interne */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton de budget */
+.budget-form-container button.btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Conteneur de la liste des budgets */
+.budget-list-container {
+    max-width: 800px; /* Largeur maximale */
+    margin: 20px auto; /* Centrage avec marges verticales */
+}
+
+/* Titre de la liste des budgets */
+.budget-list-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    font-size: 1.8em; /* Taille moyenne */
+    margin-bottom: 15px; /* Marge inférieure */
+    text-align: center; /* Texte centré */
+}
+
+/* Élément de budget dans la liste */
+.budget-item {
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    padding: 15px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge inférieure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Ombre légère */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+}
+
+/* Paragraphe dans les éléments de budget */
+.budget-item p {
+    margin: 5px 0; /* Marges verticale */
+}
+
+/* Texte en gras dans les éléments de budget */
+.budget-item strong {
+    color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Bouton pour ouvrir le formulaire d'ajout de budget */
+#open-add-budget {
+    display: block; /* Affichage en bloc */
+    margin: 20px auto; /* Centrage avec marge verticale */
+    padding: 10px 20px; /* Espacement interne */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton d'ajout de budget */
+#open-add-budget:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Conteneur du formulaire d'ajout de budget */
+#add-budget-form-container {
+    background-color: var(--container-background); /* Fond sombre */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Ombre portée */
+    margin-bottom: 20px; /* Marge inférieure */
+    max-width: 600px; /* Largeur maximale */
+    margin-left: auto; /* Centrage horizontal */
+    margin-right: auto; /* Centrage horizontal */
+}
+
+/* Bouton dans le formulaire d'ajout de budget */
+#add-budget-form-container .btn {
+    width: 100%; /* Pleine largeur */
+    margin-bottom: 10px; /* Marge inférieure */
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton dans le formulaire d'ajout de budget */
+#add-budget-form-container .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+}
+
+/* Bouton secondaire dans le formulaire d'ajout de budget */
+#add-budget-form-container .btn-secondary {
+    background-color: transparent; /* Fond transparent */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    color: var(--accent-color); /* Texte cyan */
+    transition: background-color 0.3s, color 0.3s; /* Transitions fluides */
+}
+
+/* Effet au survol du bouton secondaire d'ajout de budget */
+#add-budget-form-container .btn-secondary:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Contenu des modales de copie et déplacement */
+.copy-move-modal .modal-content {
+    background-color: var(--container-background); /* Fond sombre */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 30px; /* Espacement interne */
+    width: 500px; /* Largeur fixe */
+    margin: 10% auto; /* Centrage vertical et horizontal */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    color: var(--text-color); /* Texte gris clair */
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    animation: fadeIn 0.3s ease; /* Animation d'apparition */
+}
+
+/* Titre des modales de copie et déplacement */
+.copy-move-modal h2 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste */
+    color: var(--accent-color); /* Couleur cyan */
+    font-size: 1.8em; /* Taille moyenne */
+    margin-bottom: 20px; /* Marge inférieure */
+    text-align: center; /* Texte centré */
+}
+
+/* Groupe de champs dans les modales */
+.copy-move-modal .form-group {
+    margin-bottom: 20px; /* Marge inférieure */
+}
+
+/* Étiquettes dans les groupes de champs des modales */
+.copy-move-modal .form-group label {
+    font-weight: 500; /* Poids moyen */
+    font-size: 1.1em; /* Taille légèrement augmentée */
+    color: var(--text-color); /* Texte gris clair */
+    display: block; /* Affichage en bloc */
+    margin-bottom: 10px; /* Marge inférieure */
+}
+
+/* Champs de texte dans les modales */
+.copy-move-modal input[type="text"] {
+    width: 100%; /* Pleine largeur */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+    color: var(--text-color); /* Texte gris clair */
+    font-size: 1em; /* Taille standard */
+    transition: border-color 0.3s ease; /* Transition fluide */
+}
+
+/* Focus sur les champs de texte des modales */
+.copy-move-modal input[type="text"]:focus {
+    border-color: #0097a7; /* Bordure cyan foncé */
+    outline: none; /* Pas de contour */
+}
+
+/* Liste des comptes dans les modales */
+.copy-move-modal .account-list {
+    max-height: 200px; /* Hauteur maximale */
+    overflow-y: auto; /* Défilement vertical */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Espacement interne */
+    background-color: var(--secondary-container-background); /* Fond gris moyen */
+}
+
+/* Éléments de la liste des comptes dans les modales */
+.copy-move-modal .account-list div {
+    display: flex; /* Utilise Flexbox */
+    align-items: center; /* Centre verticalement */
+    margin-bottom: 10px; /* Marge inférieure */
+    padding: 5px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Transition fluide */
+}
+
+/* Effet au survol des éléments de la liste des comptes */
+.copy-move-modal .account-list div:hover {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+}
+
+/* Cases à cocher dans la liste des comptes */
+.copy-move-modal .account-list input[type="checkbox"] {
+    margin-right: 10px; /* Marge à droite */
+    accent-color: var(--accent-color); /* Couleur cyan */
+}
+
+/* Étiquettes dans la liste des comptes */
+.copy-move-modal .account-list label {
+    font-family: 'Roboto', sans-serif; /* Police Roboto */
+    font-size: 1em; /* Taille standard */
+}
+
+/* Bouton dans les modales de copie et déplacement */
+.copy-move-modal .btn {
+    background-color: var(--accent-color); /* Fond cyan */
+    color: var(--light-text-color); /* Texte blanc */
+    padding: 12px; /* Espacement interne */
+    border: 1px solid transparent; /* Bordure transparente pour maintenir la taille */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    font-size: 1.1em; /* Taille légèrement augmentée */
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s, border-color 0.3s; /* Transitions fluides */
+    width: 100%; /* Pleine largeur */
+    text-transform: uppercase; /* Texte en majuscules */
+}
+
+/* Effet au survol du bouton des modales */
+.copy-move-modal .btn:hover {
+    background-color: transparent; /* Fond transparent */
+    color: var(--accent-color); /* Texte cyan */
+    border: 1px solid var(--accent-color); /* Bordure cyan */
+    transform: scale(1.02); /* Légère augmentation de taille */
+}
+
+/* Bouton de fermeture des modales de copie et déplacement */
+.copy-move-modal .close {
+    color: var(--text-color); /* Texte gris clair */
+    font-size: 28px; /* Grande taille */
+    cursor: pointer; /* Curseur en main */
+    position: absolute; /* Positionnement absolu */
+    top: 15px; /* Décalage depuis le haut */
+    right: 20px; /* Décalage à droite */
+}
+
+/* Effet au survol du bouton de fermeture des modales */
+.copy-move-modal .close:hover {
+    color: var(--error-color); /* Rouge */
+}
+
+/* Animation d'apparition pour les modales */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); } /* Début : invisible et décalé */
+    to { opacity: 1; transform: translateY(0); } /* Fin : visible et en place */
+}
+
+/* Médias queries pour la réactivité (écrans jusqu'à 768px) */
+@media (max-width: 768px) {
+    /* Titre principal de la section héroïque sur mobile */
+    .hero h1 {
+        font-size: 2em; /* Taille réduite */
+    }
+    /* Paragraphe de la section héroïque sur mobile */
+    .hero p {
+        font-size: 1em; /* Taille standard */
+    }
+    /* Éléments de fonctionnalité sur mobile */
+    .feature {
+        width: 100%; /* Pleine largeur */
+    }
+    /* Statistiques sur mobile */
+    .stat {
+        margin: 10px; /* Marges réduites */
+    }
+    /* Liste de navigation sur mobile */
+    nav ul {
+        display: none; /* Caché par défaut */
+        flex-direction: column; /* Disposition en colonne */
+        position: absolute; /* Positionnement absolu */
+        top: 60px; /* Décalage depuis le haut */
+        left: 0; /* Aligné à gauche */
+        background-color: var(--container-background); /* Fond sombre */
+        width: 100%; /* Pleine largeur */
+        padding: 20px; /* Espacement interne */
+    }
+    /* Liste de navigation visible sur mobile */
+    nav ul.show {
+        display: flex; /* Affiche en Flexbox */
+    }
+    /* Bouton de menu mobile */
+    .menu-toggle {
+        display: block; /* Visible sur mobile */
+    }
+}
+
+/* Styles pour le conteneur du formulaire de budget */
+.budget-form-container {
+    background-color: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles pour le titre du formulaire de budget */
+.budget-form-container h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Styles pour les étiquettes du formulaire de budget */
+.budget-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styles pour les champs de saisie et les listes déroulantes du formulaire de budget */
+.budget-form-container input, .budget-form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--secondary-container-background);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styles pour le bouton du formulaire de budget */
+.budget-form-container button.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Effet au survol du bouton du formulaire de budget */
+.budget-form-container button.btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+/* Styles pour le conteneur de la liste des budgets */
+.budget-list-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Styles pour le titre de la liste des budgets */
+.budget-list-container h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Styles pour chaque élément de budget dans la liste */
+.budget-item {
+    position: relative;
+    background-color: var(--secondary-container-background);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styles pour les paragraphes dans les éléments de budget */
+.budget-item p {
+    margin: 5px 0;
+}
+
+/* Styles pour le texte en gras dans les éléments de budget */
+.budget-item strong {
+    color: var(--accent-color);
+}
+
+/* Styles pour la barre de progression */
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-container-background);
+}
+
+/* Styles pour la barre de progression sur WebKit */
+progress::-webkit-progress-bar {
+    background-color: var(--secondary-container-background);
+    border-radius: 10px;
+}
+
+/* Styles pour la valeur de la barre de progression sur WebKit */
+progress::-webkit-progress-value {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+/* Styles pour la barre de progression sur Firefox */
+progress::-moz-progress-bar {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+/* Styles pour le conteneur de la barre de progression avec pourcentage */
+.progress-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Styles pour la barre de progression dans le conteneur */
+.progress-container progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--secondary-container-background);
+}
+
+/* Styles pour le texte du pourcentage dans la barre de progression */
+.progress-container span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--light-text-color);
+    font-weight: bold;
+}
+
+/* Actions sur les budgets */
+.budget-actions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* Supprimer l'affichage du menu au survol */
+.budget-actions:hover .action-menu {
+    display: block;
+}
+
+.budget-modal .modal-content {
+    background-color: var(--container-background); /* Fond sombre cohérent avec le thème */
+    color: var(--text-color); /* Texte clair pour la lisibilité */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Styles pour la page des investissements */
+.investments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--container-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.investment-item {
+    background-color: var(--secondary-container-background);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.investment-actions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.investment-actions .settings-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.investment-actions .action-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: var(--container-background);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.investment-actions:hover .action-menu {
+    display: block;
+}
+
+.action-menu a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.action-menu a:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+/* Styles pour le formulaire d'ajout et de modification */
+.investment-form-container, .investment-modal .modal-content {
+    background-color: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.investment-form-container h2, .investment-modal h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.investment-form-container label, .investment-modal label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.investment-form-container input, .investment-form-container select,
+.investment-modal input, .investment-modal select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--secondary-container-background);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.investment-form-container button.btn, .investment-modal button.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.investment-form-container button.btn:hover, .investment-modal button.btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+/* Styles pour les cartes de projet */
+.goal-item {
+    background-color: var(--secondary-container-background);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Styles pour la barre de progression */
+.progress-container {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+/* Styles pour l'élément <progress> */
+.progress-container progress {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--container-background);
+    border: none;
+}
+
+/* Styles pour la barre de progression sur WebKit */
+.progress-container progress::-webkit-progress-bar {
+    background-color: var(--container-background);
+    border-radius: 15px;
+}
+
+.progress-container progress::-webkit-progress-value {
+    background-color: var(--accent-color);
+    border-radius: 15px;
+}
+
+/* Styles pour la barre de progression sur Firefox */
+.progress-container progress::-moz-progress-bar {
+    background-color: var(--accent-color);
+    border-radius: 15px;
+}
+
+/* Styles pour le pourcentage de progression */
+.progress-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles pour le groupe de boutons */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Styles pour les boutons dans le groupe */
+.button-group .btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Effet au survol des boutons dans le groupe */
+.button-group .btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+/* Styles pour la modale d'ajout de projet */
+#add-goal-modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#add-goal-modal .modal-content {
+    background-color: var(--container-background);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    color: var(--text-color);
+}
+
+#add-goal-modal .close {
+    color: var(--text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-goal-modal .close:hover {
+    color: var(--accent-color);
+}
+
+#add-goal-modal form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+#add-goal-modal form input, #add-goal-modal form select, #add-goal-modal form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--secondary-container-background);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+#add-goal-modal form button.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#add-goal-modal form button.btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+#add-goal-modal form button.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#add-goal-modal form button.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+/* Styles pour les actions sur les projets */
+.goal-actions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.goal-actions:hover .action-menu {
+    display: block;
+}
+
+.settings-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.action-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: var(--container-background);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.action-menu a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.action-menu a:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+}
+
+.modal-content {
+    background-color: var(--container-background); /* Fond sombre cohérent avec le thème */
+    color: var(--text-color); /* Texte clair pour la lisibilité */
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+/* Styles pour les boutons dans les sections du tableau de bord */
+.dashboard-section .btn {
+    display: block;
+    margin: 20px auto; /* Centre le bouton avec une marge de 20px en haut et en bas */
+    width: 200px; /* Largeur fixe pour tous les boutons */
+    text-align: center;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dashboard-section .btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.bonus-menu-item {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    font-size: 0.7rem; /* Smaller text size */
+}
