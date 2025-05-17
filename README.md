@@ -15,6 +15,8 @@
 
 ## Installation
 
+**Note importante :** Si vous réinstallez ou mettez à jour le projet, assurez-vous de vous déconnecter de tout compte FolioVision existant avant de commencer. Le processus d’installation recrée la base de données, et les données utilisateurs existantes seront perdues, ce qui pourrait provoquer des bugs si vous restez connecté.
+
 ### Prérequis
 
 Avant de commencer, assurez-vous d’avoir installé :
@@ -29,12 +31,12 @@ Vérifiez également que les services **Apache** et **MySQL** sont actifs dans X
 #### Configuration de la base de données
 
 1. Ouvrez **phpMyAdmin** via `http://localhost/phpmyadmin` dans votre navigateur.
-2. Créez une nouvelle base de données nommée `foliovision`.
-3. Importez le fichier `database.sql` situé à la racine du projet :
+2. Importez le fichier `database.sql` situé à la racine du projet :
    - Dans phpMyAdmin, cliquez sur l’onglet **Importer**.
    - Sélectionnez le fichier `database.sql` depuis votre ordinateur.
-   - Cliquez sur **Exécuter** pour créer les tables et insérer les données initiales.
-4. Vérifiez ou modifiez le fichier `config/database.php` pour correspondre à votre configuration locale. Voici le contenu par défaut :
+   - Cliquez sur **Exécuter** Cela créera la base de données foliovision, configurera les tables nécessaires et insérera les données initiales. Si une base de données foliovision existe déjà, elle sera supprimée et recréée.
+**Avertissement :** L’importation du fichier SQL supprimera toute base de données foliovision existante ainsi que ses données. Sauvegardez les données importantes avant de continuer.
+3. Vérifiez ou modifiez le fichier `config/database.php` pour correspondre à votre configuration locale. Voici le contenu par défaut :
 
    ```php
    <?php
@@ -54,10 +56,11 @@ Vérifiez également que les services **Apache** et **MySQL** sont actifs dans X
    - Les autres paramètres (`$host`, `$db_name`, `$username`) conviennent généralement pour une installation locale.
 
 #### Configuration du serveur web
-
-1. Placez le dossier du projet (`FolioVision`) dans le répertoire `htdocs` de XAMPP. Exemple :
+1. Téléchargez le ZIP du projet depuis le dépôt GitHub et extrayez-le.
+2. Renommez le dossier extrait en `FolioVision` (il pourrait être nommé `FolioVision-master` ou similaire par défaut).
+3. Placez le dossier du projet (`FolioVision`) dans le répertoire `htdocs` de XAMPP. Exemple :
    - Si XAMPP est installé dans `C:\xampp`, déplacez le dossier vers `C:\xampp\htdocs\FolioVision`.
-2. Assurez-vous que le fichier `.htaccess` est présent à la racine du projet pour gérer les réécritures d’URL.
+4. Assurez-vous que le fichier `.htaccess` est présent à la racine du projet pour gérer les réécritures d’URL.
 
 #### Accès au projet
 
