@@ -28,6 +28,17 @@ Vérifiez également que les services **Apache** et **MySQL** sont actifs dans X
 
 ### Étapes d’installation
 
+#### Configuration du serveur web
+1. Téléchargez le ZIP du projet depuis le dépôt GitHub et extrayez-le. Le dossier créé sera probablement nommé `Foliovision-master` ou quelque chose de similaire, selon la convention de nommage de GitHub.
+2. Pour éviter des problèmes avec l'URL attendue (comme `http://localhost/Foliovision/`) renommez le dossier extrait en `FolioVision` (il pourrait être nommé `FolioVision-master` ou similaire par défaut).
+3. Placez le dossier du projet (`FolioVision`) dans le répertoire `htdocs` de XAMPP. Exemple :
+   - Si XAMPP est installé dans `C:\xampp`, déplacez le dossier vers `C:\xampp\htdocs\FolioVision`.
+4. Assurez-vous que :
+   - Le dossier `Foliovision` est directement dans `htdocs` (pas dans un sous-dossier supplémentaire).
+   - Le fichier `index.php` se trouve à la racine de `C:\xampp\htdocs\Foliovision\`.
+Si ce n’est pas le cas, vérifiez que vous avez bien déplacé le bon dossier.
+5. Assurez-vous que le fichier `.htaccess` est présent à la racine du projet pour gérer les réécritures d’URL.
+
 #### Configuration de la base de données
 
 1. Ouvrez **phpMyAdmin** via `http://localhost/phpmyadmin` dans votre navigateur.
@@ -55,12 +66,6 @@ Vérifiez également que les services **Apache** et **MySQL** sont actifs dans X
    - Si vous avez défini un mot de passe pour l’utilisateur `root` dans MySQL, mettez à jour `$password`.
    - Les autres paramètres (`$host`, `$db_name`, `$username`) conviennent généralement pour une installation locale.
 
-#### Configuration du serveur web
-1. Téléchargez le ZIP du projet depuis le dépôt GitHub et extrayez-le.
-2. Renommez le dossier extrait en `FolioVision` (il pourrait être nommé `FolioVision-master` ou similaire par défaut).
-3. Placez le dossier du projet (`FolioVision`) dans le répertoire `htdocs` de XAMPP. Exemple :
-   - Si XAMPP est installé dans `C:\xampp`, déplacez le dossier vers `C:\xampp\htdocs\FolioVision`.
-4. Assurez-vous que le fichier `.htaccess` est présent à la racine du projet pour gérer les réécritures d’URL.
 
 #### Accès au projet
 
